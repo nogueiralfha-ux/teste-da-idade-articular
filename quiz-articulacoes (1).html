@@ -1702,8 +1702,9 @@
         hideError('step2-error');
         userData.phone = phone;
 
-        // Dispara o WhatsApp em nova aba com a mensagem do quiz
-        window.open('https://wa.me/5516997327255?text=Acabei%20de%20fazer%20o%20quiz', '_blank');
+        // Dispara o WhatsApp em nova aba com a mensagem contendo o nome digitado
+        const nameEscaped = encodeURIComponent(userData.name);
+        window.open(`https://wa.me/5516997327255?text=Meu%20nome%20%C3%A9%20${nameEscaped}%20e%20acabei%20de%20fazer%20o%20quiz`, '_blank');
 
         go(3);
     }
